@@ -12,6 +12,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import javafx.animation.ScaleTransition;
+import javafx.util.Duration;
 
 /**
  * @author DavidHurst
@@ -57,7 +59,7 @@ public class TicTacToe extends Application {
         }
 
         /**
-         * Retrieves state of tile from board which has the corresponding row 
+         * Retrieves state of tile from board which has the corresponding row
          * and column coordinate and updates this object's text field with it.
          */
         public void update() {
@@ -89,13 +91,14 @@ public class TicTacToe extends Application {
     /**
      * Fills and returns a GridPane with tiles, this GridPane is representative
      * of the game board.
+     * 
      * @return the GridPane
      */
     private static GridPane generateGUI() {
         gameBoard = new GridPane();
         board = new Board();
         gameBoard.setAlignment(Pos.CENTER);
-        
+
         for (int row = 0; row < board.getWidth(); row++) {
             for (int col = 0; col < board.getWidth(); col++) {
                 Tile tile = new Tile(row, col, board.getMarkAt(row, col));
@@ -120,7 +123,7 @@ public class TicTacToe extends Application {
     }
 
     /**
-     * Runs the main game loop which is responsible for playing the AI's turn 
+     * Runs the main game loop which is responsible for playing the AI's turn
      * as long as the game is still ongoing.
      */
     private void runGameLoop() {
