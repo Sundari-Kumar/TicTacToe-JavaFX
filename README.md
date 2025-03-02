@@ -2,10 +2,6 @@
 
 This is a Tic Tac Toe game implemented using JavaFX and the MiniMax algorithm. It follows the **Model-View-Controller (MVC)** structure and supports varying board sizes. The AI utilizes MiniMax with **Alpha-Beta Pruning** for optimized decision-making.
 
-## **Game Screenshot**
-
-![Tic Tac Toe](3x3Board.PNG)
-
 ## **Features**
 - Implemented using **JavaFX** for GUI
 - Uses **MiniMax Algorithm** for AI decision-making
@@ -40,9 +36,10 @@ The **MiniMax algorithm** uses backtracking to recursively determine the best mo
    cd TicTacToe-JavaFX
    ```
 2. **Compile and run the game**
+   Inside the src, execute the commands:
    ```sh
-   javac Main.java
-   java Main
+   javac --module-path %PATH_TO_FX% --add-modules javafx.controls,javafx.fxml -d bin game/*.java ai/*.java
+   java --module-path %PATH_TO_FX% --add-modules javafx.controls,javafx.fxml -cp bin game.TicTacToe
    ```
 
 ## **Resources**
